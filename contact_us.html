@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <div class="Container">
+        <!-- HEADER -->
+        <div class="upper_bar">
+            <nav>
+                <img src="./images/logo.png" alt="NGO Logo">
+                <ul>
+                    <li><a href="./home_page.html">Home</a></li>
+                    <li><a href="./about_us.html">About Us</a></li>
+                    <li><a href="./programs.html">Programs</a></li>
+                    <li><a href="./home_page.html#J">Join Us</a></li>
+                    <li><a href="./contact_us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- CONTACT SUPPORT SECTION -->
+        <div class="contact-support">
+            <h2>We're Here to Help</h2>
+            <p>Got questions? Reach out to our support team anytime. Whether you're a parent looking for the best childcare options or an NGO that needs help managing your listings, we're here to assist you.</p>
+            <p>Email: <a href="mailto:support@platformname.com">support@platformname.com</a></p>
+            <p>Phone: <a href="tel:1800CHILDCARE">1-800-CHILDCARE</a></p>
+            <p>Address: 
+                <a href="https://www.google.com/maps/place/123+NGO+Lane,+City+Name,+State,+ZIP+Code" target="_blank">123 NGO Lane, City Name, State, ZIP Code</a>
+
+            <h3>Contact Us Directly</h3>
+            <form action="./submit_contact_form.php" method="POST">
+                <label for="contact_name">Full Name:</label>
+                <input type="text" id="contact_name" name="contact_name" required>
+
+                <label for="contact_email">Email:</label>
+                <input type="email" id="contact_email" name="contact_email" required>
+
+                <label for="contact_message">Message:</label>
+                <textarea id="contact_message" name="contact_message" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+
+       
+    </div>
+</body>
+</html>

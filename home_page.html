@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>NGO CARE</title>
+</head>
+<body>
+    <!--HOME PAGE-->
+    <div class="home_page_container">
+        <div class="upper_bar">
+            <nav>
+                <img src="./images/logo.png" alt="NGO Logo">
+                <ul>
+                    <li><a href="./home_page.html">Home</a></li>
+                    <li><a href="./about_us.html">About Us</a></li>
+                    <li><a href="./programs.html">Programs</a></li>
+                    <li><a href="#J">Join Us</a></li>
+                    <li><a href="./contact_us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="bg_image">
+            <img src="./images/bg2.png" alt="Background Image">
+        </div>
+
+        <div id="bg_text">
+            <span id="typewriter-text"></span>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about_section" id="A">
+        <div class="about_content">
+            <div id="about_img">
+                <img src="./images/about_logo1.png" alt="About Image">
+            </div>
+            <div id="about_text">
+                <p>Welcome to [Platform Name], the online hub designed to help parents find the perfect childcare solutions while supporting NGOs dedicated to early childhood education. Our platform connects families with trusted childcare providers, offering access to quality programs that nurture children's growth and development.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JOIN US -->
+    <div class="join-us-container" id="J">
+        <div class="info">
+            <h2>Join Us</h2>
+            <p>We welcome individuals who are passionate about making a difference in the lives of children. Join us in our mission to improve early childhood education by volunteering, donating, or becoming a member. Your support can help us provide better services to families and children in need.</p>
+        </div>
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form action="./submit_form.php" method="POST"> <!-- Change action to your processing script -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="role">Role Interested In:</label>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select a role</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="donor">Donor</option>
+                    <option value="member">Member</option>
+                </select>
+
+                <label for="message">Message (Optional):</label>
+                <textarea id="message" name="message"></textarea>
+
+                <input type="submit" value="Join Us">
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:support@platformname.com">support@platformname.com</a></p>
+            <p>Phone: <a href="tel:1800CHILDCARE">1-800-CHILDCARE</a></p>
+            <p>Address: 123 NGO Lane, City Name, State, ZIP Code</p>
+        </div>
+    </footer>
+
+    <script>
+        const text = "Nurturing Futures";
+        let index = 0;
+        const typingSpeed = 100; // Speed of typing
+        const erasingSpeed = 50; // Speed of erasing
+        const pauseTime = 1500; // Time to pause after completing the text
+        const typewriterText = document.getElementById("typewriter-text");
+
+        function type() {
+            if (index < text.length) {
+                typewriterText.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, typingSpeed);
+            } else {
+                setTimeout(erase, pauseTime);
+            }
+        }
+
+        function erase() {
+            if (index > 0) {
+                typewriterText.textContent = text.substring(0, index - 1);
+                index--;
+                setTimeout(erase, erasingSpeed);
+            } else {
+                setTimeout(type, pauseTime); // Pause before typing again
+            }
+        }
+
+        // Start the typing effect on page load
+        window.onload = type;
+    </script>
+</body>
+</html>
